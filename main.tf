@@ -1,11 +1,11 @@
-resource "aws_instance" "MyEC2Instance" {
+resource "aws_instance" "ec2_instance" {
 
-  ami           = "ami-0015a39e4b7c0966f"
-  instance_type = "t2.micro"
+  ami           = var.aws_instance_ami
+  instance_type = var.aws_instance_type
 
   tags = {
 
-    name = "my first terraform ec2 instance"
+    name = var.instance_name
 
   }
 
