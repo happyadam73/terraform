@@ -10,3 +10,8 @@ resource "aws_instance" "ec2_instance" {
   }
 
 }
+
+resource "aws_key_pair" "ssh-key" {
+  key_name   = "ssh-key"
+  public_key = file("./id_rsa.pub")
+}
